@@ -1,0 +1,60 @@
+@charset 'utf-8';
+
+	.row{width:100%; margin-bottom:20px; box-sizing:border-box;}
+	.row:after{content:''; display:block; clear:both;}
+	.row div[class*='span']{height:100%; float:left; text-align:justify;}
+
+@media screen and (max-width:574px){
+	.container{width:96%; margin:0 auto;}
+	.row div[class*='span']{margin-bottom:10px;}
+
+	.span_12{width:100%; background:yellow; display:none;}
+	.span_6{width:100%; background:green;}
+	.span_4{width:100%; background:blue; display:none;}
+	.span_3{width:100%; background:red;}
+}
+@media screen and (min-width: 575px) and (max-width: 768px){
+	.container{width:96%; margin:0 auto;}
+	.row div[class*='span']{margin-left:2%; margin-bottom:10px;}
+
+	.span_12{width:100%; background:yellow;}
+	.span_6{width:49%; background:green;}
+	.span_4{width:32%; background:blue;}
+	.span_3{width:23.5%; background:red;}
+}
+@media screen and (min-width: 769px) and (max-width:1024px){
+	.container{width:96%; margin:0 auto;}
+	.row div[class*='span']{margin-left:2%; margin-bottom:10px;}
+	.row div[class*='span']:first-child{margin-left:0;}
+
+	.span_12{width:100%; background:yellow;}
+	.span_6{width:49%; background:green;}
+	.span_4{width:32%; background:blue;}
+	.span_3{width:23.5%; background:red;}
+}
+@media screen and (min-width:1025px){
+	.container{width:1024px; margin:0 auto;}	
+
+	.row div[class*='span']{margin-left:2%; margin-bottom:15px;}
+	.row div[class*='span']:first-child{margin-left:0;}
+
+	.span_12{width:100%; background:yellow;}
+	.span_6{width:49%; background:green;}
+	.span_4{width:32%; background:blue;}
+	.span_3{width:23.5%; background:red;}
+}
+
+
+/* ----------- media query defualt value ---------- */
+
+/*.container{width:100%}
+.row{width:100%; margin-bottom:20px; box-sizing:border-box;}
+.row:after{content:''; display:block; clear:both;}
+
+.row div[class*='span']{height:100%; float:left; margin-left:2%; text-align:justify; margin-bottom:20px;}
+.row div[class*='span']:first-child{margin-left:0;}
+
+.span_12{width:100%; background:yellow;}
+.span_6{width:49%; background:green;}
+.span_4{width:32%; background:blue;}
+.span_3{width:23.5%; background:red;}*/
