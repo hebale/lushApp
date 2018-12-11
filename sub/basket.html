@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>lush_app</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/main.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div id="state"><img src="../images/stateBar.jpg" alt="stateBar"><span class="preTime"></span></div>
+		<div id="intro">
+			<ul>
+				<li><img src="../images/intro/intro_logo.jpg" alt="intro_logo"></li>
+				<li><img src="../images/intro/intro01.jpg" alt="intro01"></li>
+				<li><img src="../images/intro/intro02.jpg" alt="intro02"></li>
+				<li><img src="../images/intro/intro03.jpg" alt="intro03"></li>
+				<li><img src="../images/intro/intro04.jpg" alt="intro04"></li>
+				<li><img src="../images/intro/intro05.jpg" alt="intro05"></li>
+				<li><img src="../images/intro/intro06.jpg" alt="intro06"></li>
+			</ul>
+		</div>
+		<header>
+			<div class="loginBtn"><a href="./login.html"><img src="../images/controls/login_off.png" alt="login"></a></div>
+			<div class="basketBtn"><a href="./basket.html"><img src="../images/controls/basket_on.png" alt="basket"></a></div>
+			<div id="toggleBtn">
+				<div class="bar"></div>
+			</div>
+			<ul id="nav">
+				<li><a href="./lush_is.html">lush is</a></li>
+				<li><a href="#">event</a></li>
+				<li><a href="#">best seller</a></li>
+				<li><a href="javascript:void(0)"><i class="fas fa-caret-down"></i>product</a></li>
+			</ul>
+			<ul class="navSub">
+				<li><a href="#"><img src="../images/icons/bath.png" alt="bath">bath</a></li>
+				<li><a href="#"><img src="../images/icons/shower.png" alt="shower">shower</a></li>
+				<li><a href="#"><img src="../images/icons/hair.png" alt="hair">hair</a></li>
+				<li><a href="#"><img src="../images/icons/face.png" alt="face">face</a></li>
+				<li><a href="#"><img src="../images/icons/body.png" alt="body">body</a></li>
+				<li><a href="#"><img src="../images/icons/perfume.png" alt="perfume">perfume</a></li>
+			</ul>
+		</header>
+		<div class="shadow"></div>
+		<section class="basket">			
+			<div>
+				<h2><i>Basket</i></h2>
+				<p>당신이 선택한 러쉬를 주문하세요<i>!</i></p>
+			</div>
+			<ul>
+				<li data-state="true">
+					<img src="#" alt="basket01">
+					<div>
+						<p class="basket_name">YELLOW SUBMARINE</p>
+						<p class="basket_sort">BATH BOMB</p>
+						<p class="basket_price"><i class="fas fa-won-sign"></i><span>12,000</span></p>
+					</div>
+					<div class="basket_btn">
+						<img src="../images/controls/check.png" alt="check01">
+					</div>
+				</li>				
+			</ul>
+		</section>
+		<footer class="basket">
+			<div>
+				<p>총 금액</p>
+				<p class="total_price">000,000</p>
+			</div>
+			<div>
+				<p>주문하기</p>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
+
+
+
+

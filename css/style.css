@@ -1,35 +1,98 @@
 @charset "utf-8";
-body{background:#f5f5f5;}
+*{box-sizing: border-box;}
+body{background:#f5f5f5; color:#f0f0f0;}
 img{width:100%;}
 a,a:link,a:visited{color:#fff;}
 
-#container{position:relative; width:360px; height:640px; margin:50px auto 0 auto; background:#fff;}
-	#state{position:fixed; width:360px; height:24px; z-index:100;} /*state ----- z-index 100*/
+#container{position:relative; width:360px; height:640px; margin:50px auto 0 auto; background:#fff; overflow:hidden;}
+	#state{position:fixed; width:360px; height:24px; z-index:99999;} /*state ----- z-index 100*/
 		.preTime{position:absolute; color:#fff; right:7px; top:2px; font-size:14px; font-weight:bold; z-index:100}
+	
+	div#intro{display:none; position:relative; width:100%; height:100%; background-color:#0D0D0D; z-index:88888;}
+	div#intro>ul{position:absolute; width:180px; height:120px; left:50%; top:50%; margin:-70px 0 0 -90px; overflow:hidden;}
+	div#intro>ul>li{position:absolute; width:100%; opacity:1}
 
-	header{position:fixed; width:360px; height:50px; top:74px; background:#000; z-index:100;} /*header ----- z-index 100*/
-		h1{position:absolute; width:80px; top:10px; left:16px;}
+	header{position:fixed; width:360px; height:50px; top:74px; background:#1e1e1e; z-index:150; box-shadow:0 3px 6px -2px rgba(0,0,0,0.6);} /*header ----- z-index 100*/
+		h1{position:absolute; width:80px; top:15px; left:16px;}
 	header>div{position:absolute; width:35px; height:50px; top:0;}
-		.loginBtn{right:86px; _background:blue;}
-		.basketBtn{right:51px; _background:red;}
-		#toggleBtn{right:16px; _background:green; cursor:pointer;}
-			.bar{position:relative; width:22px; height:3px; top:23px; left:7px; border-radius:1.5px; background:#fff; transition:0.5s;}
+		.loginBtn{right:94px; width:16px; top:11px;}
+		.basketBtn{right:57px; width:22px; top:12px;}
+		#toggleBtn{right:16px; cursor:pointer;}
+			.bar{position:relative; width:22px; height:3px; top:23px; left:7px; border-radius:1.5px; background:#f0f0f0; transition:0.5s;}
 			.bar:before,
-			.bar:after{position:absolute; content:""; display:block; width:100%; height:100%; border-radius:1.5px; background:#fff; transform-origin: 50% 50%;transition:0.5s;}
+			.bar:after{position:absolute; content:""; display:block; width:100%; height:100%; border-radius:1.5px; background:#f0f0f0; transform-origin: 50% 50%;transition:0.5s;}
 			.bar:before{top:-7px;}
 			.bar:after{top:7px;}
 		#toggleBtn.on>.bar:before{top:0; transform:rotate(90deg);}
 		#toggleBtn.on>.bar:after{top:0; transform:rotate(-180deg);}
 		#toggleBtn.on>.bar{transform:rotate(-315deg);}
 		
-		#nav{position:relative; width:100%; top:74px; box-sizing:border-box;}
+		#nav{display:none; position:relative; width:100%; height:50px; top:74px;}
 		#nav a{display:block; text-transform:uppercase;}
-		#nav>li{padding:0 22px; box-sizing:border-box;}
-		#nav>li+li{margin-top:18px;}
+		#nav>li{position:absolute; right:-20px; opacity:0;}
+		#nav>li:nth-of-type(1){top:0;}
+		#nav>li:nth-of-type(2){top:50px;}
+		#nav>li:nth-of-type(3){top:100px;}
+		#nav>li:nth-of-type(4){top:150px;}
 		#nav>li>a{font-size:24px; text-align:right; font-weight:bold; letter-spacing:1px;}
-		#nav>li>a>span{display:block;}
-		.navSub{display:none; position:relative; width:100%; top:0;}
-		.navSub>li{}
-		.navSub>li>a{}
+		#nav>li>a>i{margin-right:10px; color:#f0f0f0;}
+
+		.navSub{display:none; position:absolute; width:100%; height:0px; top:280px; padding:0 15px; background:#2d2d2d; z-index:100; overflow:hidden;}
+		.navSub:after{content:""; display:block; clear:both;}
+		.navSub>li{float:left; position:relative; width:110px; height:115px; padding:10px;}
+		.navSub>li:hover{background-color:#333;}
+		.navSub>li:after,
+		.navSub>li:before{content:""; display:block; position:absolute; background-color:#f9f9f9; opacity:0.1;}
+		.navSub>li:nth-of-type(1):before{width:50px; height:1px; bottom:0; left:30px;}
+		.navSub>li:nth-of-type(2):before{width:1px; height:50px; left:0; top:32px;}
+		.navSub>li:nth-of-type(2):after{width:50px; height:1px; bottom:0; left:30px;}		
+		.navSub>li:nth-of-type(3):before{width:1px; height:50px; left:0; top:32px;}
+		.navSub>li:nth-of-type(4):before{width:1px; height:50px; right:0; top:32px;}
+		.navSub>li:nth-of-type(5):before{width:1px; height:50px; right:0; top:32px;}
+		.navSub>li:nth-of-type(6):before{width:50px; height:1px; top:0; left:30px;}
+
+		.navSub>li>a{display:block; font-size:12px; text-align:center; text-transform:uppercase; letter-spacing:1px; font-weight:bold; color:#f0f0f0;}
+		.navSub>li>a>img{display:block; width:65px; margin:0 auto;}
 	
-	.shadow{position:absolute; width:100%; height:100%; background:rgba(0,0,0,0.5); opacity:0; z-index:50;}  /*menushadow ----- z-index 50*/
+	.shadow{display:none; position:absolute; width:100%; height:100%; background:rgba(0,0,0,0.7); opacity:0; z-index:100;}  /*menushadow ----- z-index 50*/
+	
+	/*-------------------- 로그인페이지 css --------------------*/
+	section#login{position:relative; width:100%; height:100%; background:#1e1e1e;}
+		#login>div{position:absolute; width:180px; top:180px; left:50%; margin-left:-90px;}
+		#login>div>h2{margin-bottom:50px;}
+		#login>div>form>input{width:100%; background-color:#1e1e1e; border:none; border-bottom:1px solid #999; color:#f0f0f0; padding-left:5px; padding-bottom:5px;}
+		#login>div>form>input+input{margin-top:20px;}
+		#login>div>form>button{display:block; width:100%; height:40px; background-color:#1ec878; border:1px solid #0db767; margin-top:40px; font-weight:bold; font-size:16px; letter-spacing:3px; color:#f0f0f0; cursor:pointer;}
+		#login>div>form>button:hover{background-color:#0db767;}
+
+		.copyRight{position:absolute; width:100%; height:10px; bottom:30px; color:rgba(255,255,255,0.5); font-size:10px; text-align:center;}
+
+	/*-------------------- 장바구니페이지 css --------------------*/
+	section.basket{position:relative; width:calc(100% + 17px); height:calc(100% - 144px); top:74px; color:#333; overflow-y:scroll;}
+	section.basket>div{position:relative; width:100%; top:25px; text-align:center;}
+	section.basket>div>h2{font-size:36px;}
+	section.basket>div>p{font-size:12px;}
+
+	section.basket>ul{position:relative; width:100%; height:400px; margin-top:60px;}
+	section.basket>ul>li{width:340px; height:100px; margin:0 auto; border:1px solid #f5f5f5; transition:0.3s;}
+	section.basket>ul>li:last-child{margin-bottom:30px}
+	section.basket>ul>li+li{margin-top:15px;}
+	section.basket>ul>li:after{content:""; display:block; clear:both;}
+	section.basket>ul>li>img{display:block; float:left; width:100px; height:100px;}
+	section.basket>ul>li>div:nth-of-type(1){float:left; font-weight:bold; margin-left:10px;}
+	section.basket>ul>li>div:nth-of-type(1)>p:nth-of-type(1){margin-top:18px; font-size:14px; font-weight:bold; letter-spacing:0.3px;}
+	section.basket>ul>li>div:nth-of-type(1)>p:nth-of-type(2){font-size:12px; color:#bbb;}
+	section.basket>ul>li>div:nth-of-type(1)>p:nth-of-type(3){margin-top:10px; font-size:16px; font-weight:bold; color:#1ec878;}
+	section.basket>ul>li>div:nth-of-type(1)>p:nth-of-type(3)>i{font-size:10px;}
+	section.basket>ul>li>div:nth-of-type(2){position:relative; float:right; width:60px; height:100%; background-color:#ddd; transition:0.3s; cursor:pointer;}
+	section.basket>ul>li>div:nth-of-type(2)>img{display:block; position:absolute; width:25px; height:21px; top:39px; left:17px;}
+	
+	footer.basket{position:absolute; width:100%; height:70px; bottom:0;}
+	footer.basket:after{content:""; display:block; clear:both;}
+	footer.basket>div:nth-of-type(1){float:left; width:35%; height:100%; background-color:#ddd; color:#333;}
+	footer.basket>div:nth-of-type(1)>p:nth-of-type(1){text-align:center; margin-top:10px; font-size:14px;}
+	footer.basket>div:nth-of-type(1)>p:nth-of-type(2){text-align:center; margin-top:5px; font-weight:bold;}
+	footer.basket>div:nth-of-type(2){float:left; width:65%; height:100%; background-color:#1ec878; cursor:pointer;}
+	footer.basket>div:nth-of-type(2)>p{text-align:center; font-size:20px; font-weight:bold; letter-spacing:1px; line-height:70px;}
+
+	/*-------------------- lush is 페이지 css --------------------*/
